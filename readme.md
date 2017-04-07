@@ -93,14 +93,16 @@ My final model results were:
 
 ### Testing the model on New Images
 
-Here are five German traffic signs that I found on the web:
+Here are five German traffic signs that found on the web used to show result examples of images outside of the dataset:
 
 ![30km/h][image4] ![Priority road][image5] ![Stop sign][image6] 
 ![General caution][image7] ![Roundabout mandatory][image8]
 
+These images are not from extreme cases and display mostly good contrast. They are mostly frontal views except for the stop sign that has a slightly slanted view. All five images present good contrast which is not a good representation of real cases. The roundabout sign had watermarks on top but this didn't affect result, possibly because after the resizing those were barely visible. One thing to notice is that the backgrounds varied significantly, a couple of them having sky, another with a rural theme and another one with trees and this didn't affect negatively the results.
+
 #### 1. Acuracy of the model in new images
 
-All five images were well classified with the resulting net. This is slightly surprising but at the same time an example of five images is not necessarely statistically significant. The test and validation accuracy suggest than more that at least 4 of those images could be classified correctly.
+All five images were classified correctly with the resulting net. This slightly surprising but at the same time an example of five images is not necessarely statistically significant. The test and validation accuracy suggest than more that at least 4 of those images could be classified correctly. With the accuracies presented one could expect 4.6 correct images which rounds closer to the 5 being correct. This also reflects the fact that the training was successful and there was no over fitting. 
 
 #### 2. Prediction certainty of the model
 The code for making predictions on my final model is located in the last cell of the Ipython notebook.
