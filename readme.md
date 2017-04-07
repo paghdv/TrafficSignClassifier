@@ -36,11 +36,11 @@ Before augmenting and balancing the sizes are as following
 * The shape of a traffic sign image is 32x32
 * The number of unique classes/labels in the data set is 42
 
-####2. The training data was augmented and balanced
+#### 2. The training data was augmented and balanced
 
 I decided to augment data by rotating it from -20 to +20 degrees in 5 degrees intervals. After the data was augmented I balanced the training set and kept 278392 images equality distributed for all classes. 
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
 ####1. Data pre-processing
 
@@ -78,11 +78,11 @@ My final model consisted of the following layers:
  
 
 
-####4. Training
+#### 4. Training
 
 In the cell 19 I define my training which uses an adam optimizer. After a few tests I used a training rate of 0.0001, with 30 epochs and batch sizes of 2048
 
-####5. Results
+#### 5. Results
 
 My final model results were:
 * training set accuracy of 97.9%
@@ -93,7 +93,7 @@ My final model results were:
 * The initial architecture had a slightly stronger over-fitting and didn't have enough room to encode the number of the classes in the output (under-fitting). Therefore the main changes were to add a dropout as a regularizer and added more nodes.
 * Which parameters were tuned? How were they adjusted and why? 
 
-###Testing the model on New Images
+### Testing the model on New Images
 
 Here are five German traffic signs that I found on the web:
 
