@@ -19,7 +19,6 @@ The steps of this project are the following:
 [image8]: images/40.jpg "Traffic Sign 5"
 
 ---
-### Writeup / README
 
 Link to my [project code](https://github.com/paghdv/TrafficSignClassifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
@@ -36,7 +35,7 @@ Before augmenting and balancing the sizes are as following
 * The shape of a traffic sign image is 32x32
 * The number of unique classes/labels in the data set is 42
 
-#### 2. The training data was augmented and balanced
+#### The training data was augmented and balanced
 
 I decided to augment data by rotating it from -20 to +20 degrees in 5 degrees intervals. After the data was augmented I balanced the training set and kept 278392 images equality distributed for all classes. 
 
@@ -49,7 +48,7 @@ Data normalization equalizes the impact of the intensities of the images during 
 ![Example of augmented data][image1]
 
 
-#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. Model architecture
 
 The code for my final model is located in the 13th cell of the ipython notebook. It is based on LeNet model with a few modifications:
 1. Changed the input size to acept rgb images
@@ -77,11 +76,11 @@ My final model consisted of the following layers:
 
 
 
-#### 4. Training
+#### 3. Training
 
 In the cell 19 I define my training which uses an adam optimizer. After a few tests I used a training rate of 0.0001, with 30 epochs and batch sizes of 2048
 
-#### 5. Results
+#### 4. Results
 
 My final model results were:
 * training set accuracy of 97.9%
@@ -99,11 +98,11 @@ Here are five German traffic signs that I found on the web:
 ![30km/h][image4] ![Priority road][image5] ![Stop sign][image6] 
 ![General caution][image7] ![Roundabout mandatory][image8]
 
-#### Acuracy of the model in new images
+#### 1. Acuracy of the model in new images
 
 All five images were well classified with the resulting net. This is slightly surprising but at the same time an example of five images is not necessarely statistically significant. The test and validation accuracy suggest than more that at least 4 of those images could be classified correctly.
 
-#### Prediction certainty of the model
+#### 2. Prediction certainty of the model
 The code for making predictions on my final model is located in the last cell of the Ipython notebook.
 
 For the first image, the model is quite sure that this is a 30km/h sign (probability of 0.9999), which is absolutely correct. The top five soft max probabilities were
