@@ -1,7 +1,4 @@
-#**Traffic Sign Recognition** 
----
-
-**Traffic Sign Recognition Project**
+==Traffic Sign Classifier Project
 
 The steps of this project are the following:
 * Load the data set
@@ -12,26 +9,21 @@ The steps of this project are the following:
 * Summarize the results
 
 
-[//]: # (Image References)
+[//]: = (Image References)
 
 [image1]: images/example.png "Example of augmented data"
 [image4]: images/1.jpg "Traffic Sign 1"
-[image5]: images/2.jpg "Traffic Sign 2"
-[image6]: images/3.jpg "Traffic Sign 3"
-[image7]: images/4.jpg "Traffic Sign 4"
-[image8]: images/5.jpg "Traffic Sign 5"
-
-## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+[image5]: images/11.jpg "Traffic Sign 2"
+[image6]: images/14.jpg "Traffic Sign 3"
+[image7]: images/18.jpg "Traffic Sign 4"
+[image8]: images/40.jpg "Traffic Sign 5"
 
 ---
-###Writeup / README
+=== Writeup / README
 
-Link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+Link to my [project code](https://github.com/paghdv/TrafficSignClassifier/blob/master/Traffic_Sign_Classifier.ipynb)
 
-###Data Set Summary & Exploration
-
-####1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+=== Data Set Summary & Exploration
 
 The code for this step is contained in the second code cell of the IPython notebook.  
 
@@ -44,20 +36,20 @@ Before augmenting and balancing the sizes are as following
 * The shape of a traffic sign image is 32x32
 * The number of unique classes/labels in the data set is 42
 
-####2. The training data was augmented and balanced
+====2. The training data was augmented and balanced
 
 I decided to augment data by rotating it from -20 to +20 degrees in 5 degrees intervals. After the data was augmented I balanced the training set and kept 278392 images equality distributed for all classes. 
 
-###Design and Test a Model Architecture
+===Design and Test a Model Architecture
 
-####1. Data pre-processing
+====1. Data pre-processing
 
 After the training data was augmented and balanced I proceeded to normalize the images by substracting them 128 and dividing them by 128 in order to keep their intensity values between [-0.5,+0.5]
 Data normalization equalizes the impact of the intensities of the images during training. The data was then shuffled in order to avoid skewing the learning towards a certain class right from the begining.
 ![Example of augmented data][image1]
 
 
-####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+====3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 The code for my final model is located in the 13th cell of the ipython notebook. It is based on LeNet model with a few modifications:
 1. Changed the input size to acept rgb images
@@ -86,11 +78,11 @@ My final model consisted of the following layers:
  
 
 
-####4. Training
+====4. Training
 
 In the cell 19 I define my training which uses an adam optimizer. After a few tests I used a training rate of 0.0001, with 30 epochs and batch sizes of 2048
 
-####5. Results
+====5. Results
 
 My final model results were:
 * training set accuracy of 97.9%
@@ -102,18 +94,18 @@ If an iterative approach was chosen:
 * The initial architecture had a slightly stronger over-fitting and didn't have enough room to encode the number of the classes in the output (under-fitting). Therefore the main changes were to add a dropout as a regularizer and added more nodes.
 * Which parameters were tuned? How were they adjusted and why? 
 
-###Testing the model on New Images
+===Testing the model on New Images
 
 Here are five German traffic signs that I found on the web:
 
 ![30km/h][image4] ![Priority road][image5] ![Stop sign][image6] 
 ![General caution][image7] ![Roundabout mandatory][image8]
 
-#### Acuracy of the model in new images
+==== Acuracy of the model in new images
 
 All five images were well classified with the resulting net. This is slightly surprising but at the same time an example of five images is not necessarely statistically significant. The test and validation accuracy suggest than more that at least 4 of those images could be classified correctly.
 
-#### Prediction certainty of the model
+==== Prediction certainty of the model
 The code for making predictions on my final model is located in the last cell of the Ipython notebook.
 
 For the first image, the model is quite sure that this is a 30km/h sign (probability of 0.9999), which is absolutely correct. The top five soft max probabilities were
