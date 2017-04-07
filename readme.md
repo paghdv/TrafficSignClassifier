@@ -42,14 +42,14 @@ I decided to augment data by rotating it from -20 to +20 degrees in 5 degrees in
 
 ### Design and Test a Model Architecture
 
-####1. Data pre-processing
+#### 1. Data pre-processing
 
 After the training data was augmented and balanced I proceeded to normalize the images by substracting them 128 and dividing them by 128 in order to keep their intensity values between [-0.5,+0.5]
 Data normalization equalizes the impact of the intensities of the images during training. The data was then shuffled in order to avoid skewing the learning towards a certain class right from the begining.
 ![Example of augmented data][image1]
 
 
-####3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 The code for my final model is located in the 13th cell of the ipython notebook. It is based on LeNet model with a few modifications:
 1. Changed the input size to acept rgb images
@@ -74,8 +74,7 @@ My final model consisted of the following layers:
 | RELU					| 												|
 | Dropout				| (Used 0.5 while training)						|
 | Fully connected		| Input 84, Output n_classes					|
-|:---------------------:|:---------------------------------------------:|
- 
+
 
 
 #### 4. Training
